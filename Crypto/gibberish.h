@@ -1,10 +1,8 @@
 #ifndef GIBBERISH_H
 #define GIBBERISH_H
 
+#include "alphabets.h"
 #include "icipher.h"
-
-#include <QHash>
-#include <QString>
 
 class Gibberish : public ICipher
 {
@@ -14,7 +12,7 @@ public:
     QString encrypt(const QString &openText) override;
 
 private:
-    QHash<QString, QString> alphabet;
+    GibberishAlphabet alphabet;
 };
 
 #endif // GIBBERISH_H

@@ -1,6 +1,9 @@
 #ifndef ICIPHER_H
 #define ICIPHER_H
 
+#include "alphabets.h"
+
+#include <QHash>
 #include <QString>
 
 class ICipher
