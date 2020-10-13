@@ -3,6 +3,7 @@
 
 #include "cesar.h"
 #include "gibberish.h"
+#include "settings.h"
 
 #include <QClipboard>
 #include <QMainWindow>

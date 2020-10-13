@@ -6,6 +6,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     _gibberish = new Gibberish();
+
+    // connect
+    connect(ui->tabWidget, &QTabWidget::currentChanged, &Settings::instance(), &Settings::setTab);
+
+    // set
+    Settings::instance().load();
+    ui->tabWidget->setCurrentIndex(Settings::instance().getTab());
 }
 
 MainWindow::~MainWindow()
@@ -18,6 +25,7 @@ void MainWindow::runCesar(const QString &openText, const int &shift, bool hasYo)
 {
     Cesar cesar(shift, hasYo);
     ui->cesarCryptogram_lineEdit->setText(cesar.encrypt(openText));
+    Settings::instance().save();
 }
 
 void MainWindow::on_swap_pushButton_clicked()
@@ -28,6 +36,7 @@ void MainWindow::on_swap_pushButton_clicked()
 void MainWindow::on_gibberishOpenText_lineEdit_textChanged(const QString &text)
 {
     ui->gibberishCryptogram_lineEdit->setText(_gibberish->encrypt(text));
+    Settings::instance().save();
 }
 
 void MainWindow::on_cesarOpenText_lineEdit_textChanged(const QString &text)
@@ -38,6 +47,11 @@ void MainWindow::on_cesarOpenText_lineEdit_textChanged(const QString &text)
 void MainWindow::on_cesar_spinBox_valueChanged(int shift)
 {
     runCesar(ui->cesarOpenText_lineEdit->text(), shift, ui->cesarHasYo_checkBox->isChecked());
+}
+
+void MainWindow::on_cesarHasYo_checkBox_clicked(bool checked)
+{
+    runCesar(ui->cesarOpenText_lineEdit->text(), ui->cesar_spinBox->value(), checked);
 }
 
 void MainWindow::on_cesarBrute_pushButton_clicked()
@@ -51,9 +65,4 @@ void MainWindow::on_cesarBrute_pushButton_clicked()
     }
     ui->cesar_plainTextEdit->clear();
     ui->cesar_plainTextEdit->insertPlainText(text);
-}
-
-void MainWindow::on_cesarHasYo_checkBox_clicked(bool checked)
-{
-    runCesar(ui->cesarOpenText_lineEdit->text(), ui->cesar_spinBox->value(), checked);
 }

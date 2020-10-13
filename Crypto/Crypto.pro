@@ -21,14 +21,16 @@ SOURCES += \
     gibberish.cpp \
     icipher.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    settings.cpp
 
 HEADERS += \
     alphabets.h \
     cesar.h \
     gibberish.h \
     icipher.h \
-    mainwindow.h
+    mainwindow.h \
+    settings.h
 
 FORMS += \
     mainwindow.ui

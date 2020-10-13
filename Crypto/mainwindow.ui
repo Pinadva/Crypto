@@ -19,9 +19,9 @@
    <string>Crypto</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QTabWidget" name="gibberish_tabWidget">
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>1</number>
       </property>
@@ -171,7 +171,38 @@
            <string>Буква &quot;Ё&quot;</string>
           </property>
           <property name="checked">
-           <bool>false</bool>
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Сибирский Шифр</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="siberianOpenText_lineEdit"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Открытый текст</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Криптограмма</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="siberianCryptogram_lineEdit">
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
