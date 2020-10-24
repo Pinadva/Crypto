@@ -1,6 +1,7 @@
 #ifndef TST_CESAR_H
 #define TST_CESAR_H
 
+#include "alphabets.h"
 #include "cesar.h"
 #include "icipher.h"
 
@@ -10,23 +11,23 @@
 
 TEST(Cesar, enUpShift1)
 {
-    Cesar cesar(1, true);
+    Cesar cesar(true, 1);
     ASSERT_EQ("HPE", cesar.encrypt("GOD"));
 }
 TEST(Cesar, enUpOverflow)
 {
-    Cesar cesar(20, true);
+    Cesar cesar(true, 20);
     ASSERT_EQ("AIX", cesar.encrypt("GOD"));
 }
 
 TEST(Cesar, enLowShift1)
 {
-    Cesar cesar(1, true);
+    Cesar cesar(true, 1);
     ASSERT_EQ("hpe", cesar.encrypt("god"));
 }
 TEST(Cesar, enLowOverflow)
 {
-    Cesar cesar(20, true);
+    Cesar cesar(true, 20);
     ASSERT_EQ("aix", cesar.encrypt("god"));
 }
 

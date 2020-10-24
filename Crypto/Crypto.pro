@@ -10,6 +10,8 @@ CONFIG += static
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+INCLUDEPATH += \
+            Model/
 
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -17,20 +19,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    cesar.cpp \
-    gibberish.cpp \
-    icipher.cpp \
+    Model/cesar.cpp \
+    Model/gibberish.cpp \
+    Model/icipher.cpp \
+    Model/ikeyedcipher.cpp \
+    Model/polybius_square.cpp \
+    Model/siberian.cpp \
+    Model/vigener.cpp \
+    alphabets.cpp \
     main.cpp \
     mainwindow.cpp \
-    settings.cpp
+    presenter.cpp \
+    settings.cpp \
+    view.cpp
 
 HEADERS += \
+    Model/cesar.h \
+    Model/gibberish.h \
+    Model/icipher.h \
+    Model/ikeyedcipher.h \
+    Model/polybius_square.h \
+    Model/siberian.h \
+    Model/vigener.h \
     alphabets.h \
-    cesar.h \
-    gibberish.h \
-    icipher.h \
     mainwindow.h \
-    settings.h
+    presenter.h \
+    settings.h \
+    status.h \
+    view.h
 
 FORMS += \
     mainwindow.ui

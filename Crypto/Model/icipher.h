@@ -1,18 +1,20 @@
 #ifndef ICIPHER_H
 #define ICIPHER_H
 
-#include "alphabets.h"
-
 #include <QHash>
 #include <QString>
 
 class ICipher
 {
 public:
-    ICipher();
+    ICipher(bool hasYo = false);
     virtual ~ICipher();
 
     virtual QString encrypt(const QString &openText) = 0;
+    virtual QString decrypt(const QString &crypto);
+
+protected:
+    bool _hasYo;
 };
 
 #endif // ICIPHER_H

@@ -1,4 +1,5 @@
 #include "tst_cesar.h"
+#include "tst_vigener.h"
 
 #include <QString>
 #include <gtest/gtest.h>
@@ -7,7 +8,7 @@
 QT_BEGIN_NAMESPACE
 inline void PrintTo(const QString &str, ::std::wostream *os)
 {
-    *os << qUtf8Printable(str);
+    *os << qUtf8Printable(str.toUtf8());
 }
 QT_END_NAMESPACE
 
