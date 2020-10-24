@@ -40,6 +40,10 @@ private slots:
     void on_vigenerHasYo_checkBox_clicked(bool checked);
     void on_vigenerDecrypt_pushButton_clicked();
 
+    void on_polybiusSquareOpenText_lineEdit_textChanged(const QString &arg1);
+
+    void on_polybiusSquareDecrypt_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 

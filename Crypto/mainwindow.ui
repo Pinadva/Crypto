@@ -23,7 +23,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -296,13 +296,6 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="polybiusSquareCrypto_lineEdit">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_11">
           <property name="text">
@@ -314,6 +307,13 @@
          <widget class="QLabel" name="label_12">
           <property name="text">
            <string>Криптограмма</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="polybiusSquareCrypto_lineEdit">
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -329,6 +329,13 @@
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="polybiusSquareDecrypt_pushButton">
+          <property name="text">
+           <string>Расшифровать</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>

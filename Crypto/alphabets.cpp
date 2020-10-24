@@ -229,3 +229,43 @@ int Abc::getPosition(const QChar &symbol, bool hasYo)
 
     return position;
 }
+
+PolibiusSquareAlphabet::PolibiusSquareAlphabet()
+{
+    abc.insert("a1", "а");
+    abc.insert("a2", "б");
+    abc.insert("a3", "в");
+    abc.insert("a4", "г");
+    abc.insert("a5", "д");
+    abc.insert("a6", "е");
+    abc.insert("b1", "ё");
+    abc.insert("b2", "ж");
+    abc.insert("b3", "з");
+    abc.insert("b4", "и");
+    abc.insert("b5", "й");
+    abc.insert("b6", "к");
+    abc.insert("c1", "л");
+    abc.insert("c2", "м");
+    abc.insert("c3", "н");
+    abc.insert("c4", "о");
+    abc.insert("c5", "п");
+    abc.insert("c6", "р");
+    abc.insert("d1", "с");
+    abc.insert("d2", "т");
+    abc.insert("d3", "у");
+    abc.insert("d4", "ф");
+    abc.insert("d5", "х");
+    abc.insert("d6", "ц");
+    abc.insert("e1", "ч");
+    abc.insert("e2", "ш");
+    abc.insert("e3", "щ");
+    abc.insert("e4", "ъ");
+    abc.insert("e5", "ы");
+    abc.insert("e6", "ь");
+    abc.insert("f1", "э");
+    abc.insert("f2", "ю");
+    abc.insert("f3", "я");
+    abc.insert("f4", ".");
+    abc.insert("f5", ",");
+    abc.insert("f6", " ");
+}

@@ -9,6 +9,7 @@ void Presenter::runGibberish(const QString &text)
 {
     Gibberish gibberish;
     QString crypto = gibberish.encrypt(text);
+    Settings::instance().save();
     emit readyViewGibbersin(crypto);
 }
 
@@ -41,6 +42,7 @@ void Presenter::runVigener(bool hasYo, const QString &openText, const QString &k
     emit readyViewVigener(crypto);
 }
 
+// Попробовать использовать указазетли на функции, чтобы убрать дублирование
 void Presenter::runVigenerDecrypt(bool hasYo, const QString &openText, const QString &key)
 {
     if (key.isEmpty() or openText.isEmpty())
@@ -52,6 +54,22 @@ void Presenter::runVigenerDecrypt(bool hasYo, const QString &openText, const QSt
     QString crypto = vigener.decrypt(openText);
     Settings::instance().save();
     emit readyViewVigener(crypto);
+}
+
+void Presenter::runPolybiusSquare(const QString &text)
+{
+    PolybiusSquare square;
+    QString crypto = square.encrypt(text);
+    Settings::instance().save();
+    emit readyViewPolybiusSquare(crypto);
+}
+
+void Presenter::runPolybiusSquareDecrypt(const QString &text)
+{
+    PolybiusSquare square;
+    QString crypto = square.decrypt(text);
+    Settings::instance().save();
+    emit readyViewPolybiusSquare(crypto);
 }
 
 bool Presenter::isVigenerKeyValid(const QString &key)

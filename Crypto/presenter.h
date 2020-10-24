@@ -3,6 +3,7 @@
 
 #include "cesar.h"
 #include "gibberish.h"
+#include "polybius_square.h"
 #include "settings.h"
 #include "status.h"
 #include "view.h"
@@ -23,6 +24,8 @@ public:
     void runCesarBrute(bool hasYo, const QString &openText);
     void runVigener(bool hasYo, const QString &openText, const QString &key);
     void runVigenerDecrypt(bool hasYo, const QString &openText, const QString &key);
+    void runPolybiusSquare(const QString &text);
+    void runPolybiusSquareDecrypt(const QString &text);
 
 private:
     bool isVigenerKeyValid(const QString &key);
@@ -33,6 +36,7 @@ signals:
     void readyViewCesar(const QString &crypto);
     void readyViewVigener(const QString &crypto);
     void readyViewBruteCesar(const QStringList &brute);
+    void readyViewPolybiusSquare(const QString &crypto);
 
 private:
     View *_view = nullptr;

@@ -5,21 +5,29 @@
 #include <QHash>
 #include <QString>
 
-typedef QHash<QString, int> Hash;
+typedef QHash<QString, int> HashStrInt;
+typedef QHash<QString, QString> HashStrStr;
 
 struct GibberishAlphabet
 {
-    QHash<QString, QString> alphabet;
+    HashStrStr alphabet;
 
     GibberishAlphabet();
 };
 
+struct PolibiusSquareAlphabet
+{
+    HashStrStr abc;
+
+    PolibiusSquareAlphabet();
+};
+
 struct Abc
 {
-    Hash ruUpper;
-    Hash ruLower;
-    Hash enUpper;
-    Hash enLower;
+    HashStrInt ruUpper;
+    HashStrInt ruLower;
+    HashStrInt enUpper;
+    HashStrInt enLower;
     const QString ruUpperLine = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
     const QString ruLowerLine = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
     const QString enUpperLine = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
